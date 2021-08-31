@@ -1,0 +1,21 @@
+[profile.release]
+lto = true
+
+[profile.release.package.anchor-cli]
+codegen-units = 1
+
+[workspace]
+members = [
+    "cli",
+    "client",
+    "lang",
+    "lang/attribute/*",
+    "lang/derive/*",
+    "lang/syn",
+    "spl",
+]
+exclude = [
+    "examples/swap/deps/serum-dex",
+    "examples/cfo/deps/serum-dex",
+    "examples/permissioned-markets/deps/serum-dex",
+]
